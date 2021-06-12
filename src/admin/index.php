@@ -119,7 +119,7 @@ require 'cek.php';
                             }
                             ?>
                             <?php
-                                $ambildatastock = mysqli_query($conn, "select * from stockbrg where stock < 10");
+                                $ambildatastock = mysqli_query($conn, "select * from stockbrg where stock < 10 and stock != 0");
 
                                 while($fetch=mysqli_fetch_array($ambildatastock)){
                                     $barang=$fetch['namabarang'];

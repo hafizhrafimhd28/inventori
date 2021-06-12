@@ -179,7 +179,7 @@ if(isset($_POST['hapusbarang'])){
 
     $gambar=mysqli_query($conn, "select*from stockbrg where idbarang='$idb'");
     $get=mysqli_fetch_array($gambar);
-    $img= 'image/'.$get['image'];
+    $img= '../image/'.$get['image'];
     unlink($img);
 
     $hapus = mysqli_query($conn, "delete from stockbrg where idbarang='$idb'");

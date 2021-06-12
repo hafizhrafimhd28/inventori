@@ -314,7 +314,7 @@ require 'cek.php';
           <br>
           <input type="number" name="qty" class="form-control" placeholder="Banyak Barang" required>
           <br>
-          <input type="text" name="penerima" placeholder="Nama Penerima" class="form-control" required>
+          <input type="text" name="penerima" placeholder="Nama Pemasuk" class="form-control" required>
           <br>
           <input type="hidden" name="admin" value="<?=$_SESSION['username'];?>">
          
