@@ -89,7 +89,7 @@ if(isset($_POST['barangmasuk'])){
     $stockskrg = $ambildatanya['stock'];
     $tambahstockdgnqty = $stockskrg+$qty;
 
-    $addtomasuk = mysqli_query($conn, "insert into brgmasuk (idbarang, ket, qty, admin) values('$barangnya','$penerima','$qty','$admin')");
+    $addtomasuk = mysqli_query($conn, "insert into brgmasuk (idbarang, ket, qty, admin, status) values('$barangnya','$penerima','$qty','$admin', 1)");
     $updatestockmasuk = mysqli_query($conn, "update stockbrg set stock='$tambahstockdgnqty' where idbarang='$barangnya'");
     if($addtomasuk&&$updatestockmasuk){
         header('location:brgmasuk.php');
@@ -115,7 +115,7 @@ if(isset($_POST['barangkeluar'])){
         //kalau ada stock
     $tambahstockdgnqty = $stockskrg-$qty;
 
-    $addtomasuk = mysqli_query($conn, "insert into brgkeluar (idbarang, penerima, qty, admin) values('$barangnya','$penerima','$qty', '$admin')");
+    $addtomasuk = mysqli_query($conn, "insert into brgkeluar (idbarang, penerima, qty, admin, status) values('$barangnya','$penerima','$qty', '$admin', 1)");
     $updatestockmasuk = mysqli_query($conn, "update stockbrg set stock='$tambahstockdgnqty' where idbarang='$barangnya'");
     if($addtomasuk&&$updatestockmasuk){
         header('location:brgkeluar.php');
