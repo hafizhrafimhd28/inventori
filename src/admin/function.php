@@ -28,7 +28,7 @@ if(isset($_POST['tambahbarang'])){
         if(in_array($ekstensi, $allowed_extension)=== true){
             //validasi ukuran file
             if($ukuran < 20000000){
-                move_uploaded_file($file_temp, 'image/'.$image);
+                move_uploaded_file($file_temp, '../image/'.$image);
 
                 $addtotable = mysqli_query($conn, "INSERT INTO stockbrg (namabarang, deskripsi, stock, image) values('$namabarang', '$deskripsi', '$stock', '$image')");
                 if($addtotable){
@@ -160,7 +160,7 @@ if(isset($_POST['updatebarang'])){
     }
     }else{
         //jika ingin upload
-        move_uploaded_file($file_temp, 'image/'.$image);
+        move_uploaded_file($file_temp, '../image/'.$image);
         $update = mysqli_query($conn, "update stockbrg set namabarang='$namabarang', deskripsi='$deskripsi',image='$image' where idbarang='$idbarang'");
         if($update){
             header('location:index.php');
